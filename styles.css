@@ -111,10 +111,11 @@ nav ul {
     background: #3f3cbb;
     margin: 0;
     padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: fixed;  /* Ensures navbar sticks to the top of the viewport */
+    top: 0;  /* Keeps it at the top of the screen */
+    z-index: 1000;  /* Makes sure it stays on top of other elements */
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 nav ul li {
