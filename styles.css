@@ -93,7 +93,7 @@ header.hero .cta-btn:hover {
 
 /* New Button Styles */
 header.hero .cta-btn.book-class-btn {
-    background-color: #28a745;
+    background-color: #3f3cbb;
     /* Green for action */
     animation: fadeInButton 1.5s ease-out 2s forwards;
     /* Slight delay for this button */
@@ -101,7 +101,7 @@ header.hero .cta-btn.book-class-btn {
 
 header.hero .cta-btn.book-class-btn:hover {
     transform: scale(1.1);
-    background-color: #218838;
+    background-color: #1b18e0;
     /* Dark green for hover effect */
     color: white;
 }
