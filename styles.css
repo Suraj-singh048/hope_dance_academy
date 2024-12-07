@@ -8,7 +8,12 @@ body {
     color: #333;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
@@ -16,8 +21,8 @@ h1, h2, h3, h4, h5, h6 {
 header.hero {
     position: relative;
     height: 100vh;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('1.jpg') no-repeat center center/cover;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('1.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,6 +38,13 @@ header.hero .hero-content {
     max-width: 900px;
     animation: fadeIn 2s ease-out;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    /* Force buttons to be in a column */
+    align-items: center;
+    /* Center align the buttons */
+    justify-content: center;
+    /* Ensure vertical alignment */
 }
 
 header.hero h1 {
@@ -40,7 +52,8 @@ header.hero h1 {
     margin-bottom: 1rem;
     line-height: 1.2;
     text-transform: uppercase;
-    color: #ffcc00; /* Vibrant yellow for a party vibe */
+    color: #fbff00fa;
+    /* Vibrant yellow for a party vibe */
     animation: glowEffect 2s infinite alternate;
 }
 
@@ -56,7 +69,8 @@ header.hero p {
 header.hero .cta-btn {
     font-size: 1.2rem;
     text-transform: uppercase;
-    background-color: #ff5733; /* Bright orange for energy */
+    background-color: #ff5733;
+    /* Bright orange for energy */
     color: white;
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -64,11 +78,31 @@ header.hero .cta-btn {
     font-weight: bold;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     animation: fadeInButton 1.5s ease-out 1s forwards;
+    margin-bottom: 1rem;
+    /* Adds space between buttons */
+    width: auto;
+    /* Reset width for default button size */
 }
 
 header.hero .cta-btn:hover {
     transform: scale(1.1);
-    background-color: #c70039; /* Deep red for excitement */
+    background-color: #c70039;
+    /* Deep red for excitement */
+    color: white;
+}
+
+/* New Button Styles */
+header.hero .cta-btn.book-class-btn {
+    background-color: #28a745;
+    /* Green for action */
+    animation: fadeInButton 1.5s ease-out 2s forwards;
+    /* Slight delay for this button */
+}
+
+header.hero .cta-btn.book-class-btn:hover {
+    transform: scale(1.1);
+    background-color: #218838;
+    /* Dark green for hover effect */
     color: white;
 }
 
@@ -77,6 +111,7 @@ header.hero .cta-btn:hover {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -86,6 +121,7 @@ header.hero .cta-btn:hover {
     0% {
         text-shadow: 2px 2px 8px rgba(255, 204, 0, 0.8);
     }
+
     100% {
         text-shadow: 4px 4px 12px rgba(255, 204, 0, 1);
     }
@@ -96,9 +132,80 @@ header.hero .cta-btn:hover {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    header.hero .hero-content {
+        padding: 1.5rem;
+    }
+
+    header.hero h1 {
+        font-size: 2.5rem;
+        /* Smaller font size for mobile */
+    }
+
+    header.hero p {
+        font-size: 1.2rem;
+        /* Smaller font size for mobile */
+    }
+
+    header.hero .cta-btn {
+        font-size: 1rem;
+        /* Smaller button text */
+        padding: 0.8rem 1.5rem;
+        /* Smaller button size */
+        margin: 0.5rem 0;
+        /* Reduce space between buttons, keep it vertical */
+        width: 100%;
+        /* Make buttons full width */
+    }
+
+    header.hero .cta-btn.book-class-btn {
+        font-size: 1rem;
+        /* Match the size of the first button */
+        padding: 0.8rem 1.5rem;
+        /* Smaller button size */
+        margin-top: 0.5rem;
+        /* Reduce top margin */
+        width: 100%;
+        /* Make the second button full width */
+    }
+}
+
+/* Extra Small Mobile Devices (portrait) */
+@media (max-width: 480px) {
+    header.hero h1 {
+        font-size: 2rem;
+        /* Even smaller font size */
+    }
+
+    header.hero p {
+        font-size: 1rem;
+        /* Smaller paragraph size */
+    }
+
+    header.hero .cta-btn {
+        font-size: 0.9rem;
+        /* Smaller button text for very small screens */
+        padding: 0.7rem 1.2rem;
+        /* Even smaller buttons */
+        width: 100%;
+        /* Full width buttons */
+    }
+
+    header.hero .cta-btn.book-class-btn {
+        font-size: 0.9rem;
+        /* Matching the size for the smaller screens */
+        padding: 0.7rem 1.2rem;
+        /* Adjust button size */
+        width: 100%;
+        /* Full width buttons on small screens */
     }
 }
 
@@ -107,17 +214,41 @@ header.hero .cta-btn:hover {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    /* Vertically center the items */
     justify-content: center;
     background: #3f3cbb;
     margin: 0;
     padding: 1rem 0;
-    position: fixed;  /* Ensures navbar sticks to the top of the viewport */
-    top: 0;  /* Keeps it at the top of the screen */
-    z-index: 1000;  /* Makes sure it stays on top of other elements */
-    transition: background-color 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
+/* Align the brand to the left */
+nav ul .brand {
+    position: absolute;
+    /* Absolute positioning to place the brand to the left */
+    left: 1rem;
+    /* 1rem from the left edge */
+    font-size: 1.5rem;
+    /* Increased font size for better visibility */
+    font-weight: 600;
+    /* Bold weight for stronger emphasis */
+    color: white;
+    /* Maintain white color for the brand */
+    letter-spacing: 1px;
+    /* Adds space between letters for a more polished look */
+    text-transform: uppercase;
+    /* Uppercase text for consistency */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Add shadow to make the text pop */
+}
+
+/* Styling for the navigation links */
 nav ul li {
     margin: 0 1rem;
 }
@@ -133,7 +264,131 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ff77e9;
+    /* Hover effect for better interactivity */
 }
+
+/* Align the rest of the items to the right */
+nav ul li:last-child {
+    margin-right: 4;
+    padding-right: 2;
+}
+
+nav ul {
+    justify-content: flex-end;
+    /* Align all the navigation links to the right */
+    padding-right: 2rem;
+    /* Add some space from the right edge */
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        /* Hides the navbar on smaller screens */
+    }
+}
+
+
+
+/* Mobile Navbar Styles */
+nav.navbar_mobile {
+    display: none;
+    /* Hidden by default for mobile view */
+    background: #3f3cbb;
+    position: fixed;
+    z-index: 1000;
+}
+
+nav.navbar_mobile .mobile_navbar_upper {
+    display: flex;
+    justify-content: center;
+}
+
+nav.navbar_mobile .hamburger {
+    display: block;
+    font-size: 30px;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+/* Brand Styles (Centered in the navbar) */
+.navbar_mobile .brand {
+    flex-grow: 1;
+    /* Make the brand take available space */
+    font-size: 1.8rem;
+    /* Larger font size for better visibility */
+    font-weight: 800;
+    /* Bold text */
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    /* Center the brand name */
+    align-content: center;
+    letter-spacing: 1px;
+    /* Letter spacing for a polished look */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Text shadow for better visibility */
+}
+
+nav.navbar_mobile ul {
+    list-style: none;
+    display: none;
+    /* Hide the menu by default */
+    background: #6c6fdb;
+    /* Lighter shade of blue for the background */
+    margin: 6rem 0 0 0;
+    /* Add margin to the top */
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Right-align the menu */
+    width: 60%;
+    /* Reduced width to make it smaller */
+    z-index: 1000;
+    border-radius: 12px;
+    /* Increased border radius for more rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add subtle shadow */
+    transition: all 0.3s ease;
+    /* Smooth transition */
+}
+
+
+nav.navbar_mobile ul li {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+nav.navbar_mobile ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav.navbar_mobile ul li a:hover {
+    color: #ff77e9;
+    /* Hover effect for better interactivity */
+}
+
+
+/* Media Query to Show Mobile Navbar */
+@media screen and (max-width: 768px) {
+    nav.navbar {
+        display: none;
+        /* Hide regular navbar on mobile */
+    }
+
+    nav.navbar_mobile {
+        display: block;
+        /* Show mobile navbar */
+    }
+}
+
 /* About Section Styles */
 #about {
     background: linear-gradient(135deg, #ff77e9 10%, #3f3cbb 100%);
@@ -148,7 +403,8 @@ nav ul li a:hover {
 #about h2 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
-    color: #ffd700; /* Bright golden color for the title */
+    color: #ffd700;
+    /* Bright golden color for the title */
     text-transform: uppercase;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
     font-weight: bold;
@@ -220,6 +476,7 @@ nav ul li a:hover {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -250,6 +507,7 @@ section h2 {
 }
 
 /* Services Section */
+
 .service-list {
     display: flex;
     flex-wrap: wrap;
@@ -284,14 +542,25 @@ section h2 {
 }
 
 /* Gallery Section */
+.gallery-wrapper {
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    padding: 1rem 0;
+    /* Add some space around the scrollable area */
+}
+
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    /* Use flexbox to arrange the images horizontally */
     gap: 1rem;
+    /* Space between images */
 }
 
 .gallery-grid img {
-    width: 100%;
+    flex-shrink: 0;
+    /* Prevent images from shrinking */
+    width: 300px;
+    /* Set a fixed width for each image */
     border-radius: 10px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -300,6 +569,7 @@ section h2 {
     transform: scale(1.05);
     opacity: 0.9;
 }
+
 
 /* Testimonials Section */
 .testimonial {

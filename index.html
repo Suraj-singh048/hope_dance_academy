@@ -15,6 +15,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <ul>
+            <li class="brand"><a href="#">Hope Dance Academy</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#gallery">Gallery</a></li>
@@ -23,14 +24,36 @@
         </ul>
     </nav>
 
+
+    <!-- Mobile Navbar -->
+    <nav class="navbar_mobile">
+        <div class="mobile_navbar_upper">
+            <div class="hamburger" onclick="toggleNavbar()">
+                &#9776; <!-- Hamburger icon (three horizontal lines) -->
+            </div>
+            <div class="brand">Hope Dance Academy</div>
+        </div>
+        <div class="mobile_navbar_lower">
+            <ul id="mobileMenu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Header Section -->
     <header class="hero">
         <div class="hero-content">
             <h1>Learn to Dance with Hope!</h1>
             <p>Your ultimate destination for Professional Dance and Zumba Training</p>
             <a href="#services" class="cta-btn">Explore More</a>
+            <a href="https://wa.me/qr/GCNUDPOI73RJN1" class="cta-btn book-class-btn">Book Your Class Now</a> <!-- New button -->
         </div>
     </header>
+
 
 
     <!-- Main Content -->
@@ -107,13 +130,16 @@
         <section id="gallery" class="content-section">
             <div class="container">
                 <h2>Gallery</h2>
-                <div class="gallery-grid">
-                    <img src="photo_6226769437881646571_y.png" alt="Dance Session 1">
-                    <img src="Piyush Hope Dance Poster.png" alt="Dance Poster">
-                    <img src="https://via.placeholder.com/300" alt="Event Showcase">
+                <div class="gallery-wrapper">
+                    <div class="gallery-grid">
+                        <img src="photo_6226769437881646571_y.png" alt="Dance Session 1">
+                        <img src="Piyush Hope Dance Poster.png" alt="Dance Poster">
+                        <img src="https://via.placeholder.com/300" alt="Event Showcase">
+                    </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Testimonials Section -->
         <section id="testimonials" class="content-section">
@@ -144,6 +170,8 @@
         </div>
         <p>&copy; 2024 Hope Dance Academy. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
